@@ -1,25 +1,33 @@
 {
-    "name": "ts-template",
+    "name": "crawlee-storage-extensions",
     "version": "1.0.0",
-    "description": "TypeScript templates for new projects.",
-    "main": "index.js",
+    "description": "Package for Apify/Crawlee that allows to store encrypted text values into the Storages",
+    "main": "./dist/index.js",
+    "type": "module",
+    "files": [
+        "dist"
+    ],
     "scripts": {
         "test": "jest",
         "build": "tsc"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/JJetmar/ts-template.git"
+        "url": "git+https://github.com/JJetmar/apify-sdk-legacy.git"
     },
-    "keywords": [],
+    "keywords": ["web-scraping", "apify", "crawlee", "storage", "extensions"],
     "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "bugs": {
-        "url": "https://github.com/JJetmar/ts-template/issues"
+        "url": "https://github.com/JJetmar/apify-sdk-legacy/issues"
     },
-    "homepage": "https://github.com/JJetmar/ts-template#readme",
+    "homepage": "https://github.com/JJetmar/apify-sdk-legacy#readme",
+    "peerDependencies": {
+        "apify": "*",
+        "crawlee": "*"
+    },
     "devDependencies": {
-        "@types/jest": "^28.1.6",
+        "@types/jest": "^29.2.6",
         "jest": "^28.1.3",
         "ts-jest": "^28.0.7",
         "typescript": "^4.7.4"
