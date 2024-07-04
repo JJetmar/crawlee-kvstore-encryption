@@ -1,5 +1,5 @@
 import crypto from 'node:crypto';
-import { KeyValueStoreLike } from './types';
+import { KeyValueStoreLike } from './types.js';
 
 export class EnryptedKeyValueStore implements KeyValueStoreLike {
     #cryptSecret: string;
