@@ -22,10 +22,6 @@
         "url": "https://github.com/JJetmar/apify-sdk-legacy/issues"
     },
     "homepage": "https://github.com/JJetmar/apify-sdk-legacy#readme",
-    "peerDependencies": {
-        "apify": "*",
-        "crawlee": "*"
-    },
     "devDependencies": {
         "@types/jest": "^29.2.6",
         "jest": "^28.1.3",
