@@ -16,10 +16,10 @@ npm install crawlee-storage-extensions
 
 ```javascript
 import { encryptKeyValueStore } from 'crawlee-storage-extensions';
-import { Configuration, KeyValueStore } from 'crawlee';
+import { KeyValueStore } from 'crawlee';
 
 // Opens Default KvStore
-const kvStore = await KeyValueStore.open(Configuration.defaultKeyValueStoreId);
+const kvStore = await KeyValueStore.open();
 
 // Secret key is used to encrypt and decrypt the values
 const encryptedKvStore = encryptKeyValueStore(kvStore, 'MY_SECRET_KEY');
