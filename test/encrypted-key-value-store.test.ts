@@ -1,4 +1,4 @@
-import { encryptKeyValueStore } from "../src";
+import { encryptKeyValueStore } from '../src/';
 
 describe('Testing EncryptedKeyValueStore', () => {
     const mockedKeyValueStore = {

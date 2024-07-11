@@ -1,7 +1,7 @@
 import crypto from 'node:crypto';
 import { KeyValueStoreLike } from './types.js';
 
-export class EnryptedKeyValueStore implements KeyValueStoreLike {
+export class EncryptedKeyValueStore implements KeyValueStoreLike {
     #cryptSecret: string;
 
     constructor(private kvstore: KeyValueStoreLike, secretKey: string) {

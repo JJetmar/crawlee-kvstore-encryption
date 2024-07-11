@@ -1,6 +1,6 @@
 {
     "name": "crawlee-storage-extensions",
-    "version": "1.0.4",
+    "version": "1.0.7",
     "description": "Package for Apify/Crawlee that allows to store encrypted text values into the Storages",
     "main": "./dist/index.js",
     "type": "module",

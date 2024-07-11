@@ -1,6 +1,8 @@
 import type { KeyValueStoreLike } from './types.js';
-import { EnryptedKeyValueStore } from './encrypted-key-value-store.js';
 
-export function encryptKeyValueStore(keyValueStore: KeyValueStoreLike, secretKey: string): EnryptedKeyValueStore {
-    return new EnryptedKeyValueStore(keyValueStore, secretKey);
+import { EncryptedKeyValueStore } from './encrypted-key-value-store.js'
+export { EncryptedKeyValueStore } from './encrypted-key-value-store.js'
+
+export function encryptKeyValueStore(keyValueStore: KeyValueStoreLike, secretKey: string): EncryptedKeyValueStore {
+    return new EncryptedKeyValueStore(keyValueStore, secretKey);
 }
