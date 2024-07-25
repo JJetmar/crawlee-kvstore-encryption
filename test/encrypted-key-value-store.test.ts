@@ -1,3 +1,4 @@
+// @ts-ignore
 import { encryptKeyValueStore } from '../src/';
 
 describe('Testing EncryptedKeyValueStore', () => {

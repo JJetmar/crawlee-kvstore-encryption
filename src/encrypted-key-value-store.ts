@@ -23,7 +23,7 @@ export class EncryptedKeyValueStore implements KeyValueStoreLike {
         }
 
         try {
-            return this.decrypt(encryptedValue) as T;
+            return this.#decrypt(encryptedValue) as T;
         } catch (error) {
             if ((error as { code?: string })?.['code'] === 'ERR_OSSL_EVP_BAD_DECRYPT') {
                 throw new Error(`Unable to decrypt key: "${key}". Possibly wrong secret key is used...`);
@@ -36,11 +36,11 @@ export class EncryptedKeyValueStore implements KeyValueStoreLike {
         if (value === null) {
             return await this.kvstore.setValue(key, null);
         } else {
-            return await this.kvstore.setValue(key, this.encrypt(value));
+            return await this.kvstore.setValue(key, this.#encrypt(value));
         }
     }
 
-    private encrypt(dataToEncrypt: unknown): string {
+    #encrypt(dataToEncrypt: unknown): string {
         const iv = crypto.randomBytes(16);
         const cipher = crypto.createCipheriv(
             'aes-256-cbc',
@@ -59,7 +59,7 @@ export class EncryptedKeyValueStore implements KeyValueStoreLike {
         return Buffer.from(JSON.stringify(result)).toString('base64');
     }
 
-    private decrypt<T>(dataToDecrypt: string): T {
+    #decrypt<T>(dataToDecrypt: string): T {
         const { data, iv } = JSON.parse(Buffer.from(dataToDecrypt, 'base64').toString());
 
         const decipher = crypto.createDecipheriv(
